@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AE6F66F2C6B9E6000D66574 /* ThreeWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F66E2C6B9E6000D66574 /* ThreeWordsApp.swift */; };
+		0AE6F6712C6B9E6000D66574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6702C6B9E6000D66574 /* ContentView.swift */; };
+		0AE6F6732C6B9E6200D66574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F6722C6B9E6200D66574 /* Assets.xcassets */; };
+		0AE6F6762C6B9E6200D66574 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F6752C6B9E6200D66574 /* Preview Assets.xcassets */; };
+		0AE6F6802C6B9E6300D66574 /* ThreeWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F67F2C6B9E6300D66574 /* ThreeWordsTests.swift */; };
+		0AE6F68A2C6B9E6300D66574 /* ThreeWordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6892C6B9E6300D66574 /* ThreeWordsUITests.swift */; };
+		0AE6F68C2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F68B2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift */; };
+		0AE6F6992C6B9FA500D66574 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */; };
+		0AE6F69C2C6B9FDF00D66574 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F69B2C6B9FDF00D66574 /* HistoryItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AE6F67C2C6B9E6300D66574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AE6F6632C6B9E6000D66574 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AE6F66A2C6B9E6000D66574;
+			remoteInfo = ThreeWords;
+		};
+		0AE6F6862C6B9E6300D66574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AE6F6632C6B9E6000D66574 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AE6F66A2C6B9E6000D66574;
+			remoteInfo = ThreeWords;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AE6F66B2C6B9E6000D66574 /* ThreeWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AE6F66E2C6B9E6000D66574 /* ThreeWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsApp.swift; sourceTree = "<group>"; };
+		0AE6F6702C6B9E6000D66574 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0AE6F6722C6B9E6200D66574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AE6F6752C6B9E6200D66574 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0AE6F67B2C6B9E6300D66574 /* ThreeWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AE6F67F2C6B9E6300D66574 /* ThreeWordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsTests.swift; sourceTree = "<group>"; };
+		0AE6F6852C6B9E6300D66574 /* ThreeWordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeWordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AE6F6892C6B9E6300D66574 /* ThreeWordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsUITests.swift; sourceTree = "<group>"; };
+		0AE6F68B2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0AE6F69B2C6B9FDF00D66574 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AE6F6682C6B9E6000D66574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE6F6782C6B9E6300D66574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE6F6822C6B9E6300D66574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AE6F6622C6B9E6000D66574 = {
+			isa = PBXGroup;
+			children = (
+				0AE6F66D2C6B9E6000D66574 /* ThreeWords */,
+				0AE6F67E2C6B9E6300D66574 /* ThreeWordsTests */,
+				0AE6F6882C6B9E6300D66574 /* ThreeWordsUITests */,
+				0AE6F66C2C6B9E6000D66574 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0AE6F66C2C6B9E6000D66574 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F66B2C6B9E6000D66574 /* ThreeWords.app */,
+				0AE6F67B2C6B9E6300D66574 /* ThreeWordsTests.xctest */,
+				0AE6F6852C6B9E6300D66574 /* ThreeWordsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AE6F66D2C6B9E6000D66574 /* ThreeWords */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F69A2C6B9FD200D66574 /* Entity */,
+				0AE6F66E2C6B9E6000D66574 /* ThreeWordsApp.swift */,
+				0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */,
+				0AE6F6702C6B9E6000D66574 /* ContentView.swift */,
+				0AE6F6722C6B9E6200D66574 /* Assets.xcassets */,
+				0AE6F6742C6B9E6200D66574 /* Preview Content */,
+			);
+			path = ThreeWords;
+			sourceTree = "<group>";
+		};
+		0AE6F6742C6B9E6200D66574 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F6752C6B9E6200D66574 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0AE6F67E2C6B9E6300D66574 /* ThreeWordsTests */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F67F2C6B9E6300D66574 /* ThreeWordsTests.swift */,
+			);
+			path = ThreeWordsTests;
+			sourceTree = "<group>";
+		};
+		0AE6F6882C6B9E6300D66574 /* ThreeWordsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F6892C6B9E6300D66574 /* ThreeWordsUITests.swift */,
+				0AE6F68B2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift */,
+			);
+			path = ThreeWordsUITests;
+			sourceTree = "<group>";
+		};
+		0AE6F69A2C6B9FD200D66574 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F69B2C6B9FDF00D66574 /* HistoryItem.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AE6F66A2C6B9E6000D66574 /* ThreeWords */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AE6F68F2C6B9E6300D66574 /* Build configuration list for PBXNativeTarget "ThreeWords" */;
+			buildPhases = (
+				0AE6F6672C6B9E6000D66574 /* Sources */,
+				0AE6F6682C6B9E6000D66574 /* Frameworks */,
+				0AE6F6692C6B9E6000D66574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThreeWords;
+			productName = ThreeWords;
+			productReference = 0AE6F66B2C6B9E6000D66574 /* ThreeWords.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0AE6F67A2C6B9E6300D66574 /* ThreeWordsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AE6F6922C6B9E6300D66574 /* Build configuration list for PBXNativeTarget "ThreeWordsTests" */;
+			buildPhases = (
+				0AE6F6772C6B9E6300D66574 /* Sources */,
+				0AE6F6782C6B9E6300D66574 /* Frameworks */,
+				0AE6F6792C6B9E6300D66574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AE6F67D2C6B9E6300D66574 /* PBXTargetDependency */,
+			);
+			name = ThreeWordsTests;
+			productName = ThreeWordsTests;
+			productReference = 0AE6F67B2C6B9E6300D66574 /* ThreeWordsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0AE6F6842C6B9E6300D66574 /* ThreeWordsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AE6F6952C6B9E6300D66574 /* Build configuration list for PBXNativeTarget "ThreeWordsUITests" */;
+			buildPhases = (
+				0AE6F6812C6B9E6300D66574 /* Sources */,
+				0AE6F6822C6B9E6300D66574 /* Frameworks */,
+				0AE6F6832C6B9E6300D66574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AE6F6872C6B9E6300D66574 /* PBXTargetDependency */,
+			);
+			name = ThreeWordsUITests;
+			productName = ThreeWordsUITests;
+			productReference = 0AE6F6852C6B9E6300D66574 /* ThreeWordsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AE6F6632C6B9E6000D66574 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					0AE6F66A2C6B9E6000D66574 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					0AE6F67A2C6B9E6300D66574 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 0AE6F66A2C6B9E6000D66574;
+					};
+					0AE6F6842C6B9E6300D66574 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 0AE6F66A2C6B9E6000D66574;
+					};
+				};
+			};
+			buildConfigurationList = 0AE6F6662C6B9E6000D66574 /* Build configuration list for PBXProject "ThreeWords" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0AE6F6622C6B9E6000D66574;
+			productRefGroup = 0AE6F66C2C6B9E6000D66574 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AE6F66A2C6B9E6000D66574 /* ThreeWords */,
+				0AE6F67A2C6B9E6300D66574 /* ThreeWordsTests */,
+				0AE6F6842C6B9E6300D66574 /* ThreeWordsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AE6F6692C6B9E6000D66574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE6F6762C6B9E6200D66574 /* Preview Assets.xcassets in Resources */,
+				0AE6F6732C6B9E6200D66574 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE6F6792C6B9E6300D66574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE6F6832C6B9E6300D66574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AE6F6672C6B9E6000D66574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE6F6712C6B9E6000D66574 /* ContentView.swift in Sources */,
+				0AE6F69C2C6B9FDF00D66574 /* HistoryItem.swift in Sources */,
+				0AE6F66F2C6B9E6000D66574 /* ThreeWordsApp.swift in Sources */,
+				0AE6F6992C6B9FA500D66574 /* ContentViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE6F6772C6B9E6300D66574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE6F6802C6B9E6300D66574 /* ThreeWordsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AE6F6812C6B9E6300D66574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE6F68A2C6B9E6300D66574 /* ThreeWordsUITests.swift in Sources */,
+				0AE6F68C2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0AE6F67D2C6B9E6300D66574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AE6F66A2C6B9E6000D66574 /* ThreeWords */;
+			targetProxy = 0AE6F67C2C6B9E6300D66574 /* PBXContainerItemProxy */;
+		};
+		0AE6F6872C6B9E6300D66574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AE6F66A2C6B9E6000D66574 /* ThreeWords */;
+			targetProxy = 0AE6F6862C6B9E6300D66574 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AE6F68D2C6B9E6300D66574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0AE6F68E2C6B9E6300D66574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AE6F6902C6B9E6300D66574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ThreeWords/Preview Content\"";
+				DEVELOPMENT_TEAM = PBBT599Q77;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kevin.ThreeWords;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0AE6F6912C6B9E6300D66574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ThreeWords/Preview Content\"";
+				DEVELOPMENT_TEAM = PBBT599Q77;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kevin.ThreeWords;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0AE6F6932C6B9E6300D66574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBBT599Q77;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kevin.ThreeWordsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThreeWords.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ThreeWords";
+			};
+			name = Debug;
+		};
+		0AE6F6942C6B9E6300D66574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBBT599Q77;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kevin.ThreeWordsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThreeWords.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ThreeWords";
+			};
+			name = Release;
+		};
+		0AE6F6962C6B9E6300D66574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBBT599Q77;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kevin.ThreeWordsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ThreeWords;
+			};
+			name = Debug;
+		};
+		0AE6F6972C6B9E6300D66574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PBBT599Q77;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kevin.ThreeWordsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ThreeWords;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AE6F6662C6B9E6000D66574 /* Build configuration list for PBXProject "ThreeWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE6F68D2C6B9E6300D66574 /* Debug */,
+				0AE6F68E2C6B9E6300D66574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AE6F68F2C6B9E6300D66574 /* Build configuration list for PBXNativeTarget "ThreeWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE6F6902C6B9E6300D66574 /* Debug */,
+				0AE6F6912C6B9E6300D66574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AE6F6922C6B9E6300D66574 /* Build configuration list for PBXNativeTarget "ThreeWordsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE6F6932C6B9E6300D66574 /* Debug */,
+				0AE6F6942C6B9E6300D66574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AE6F6952C6B9E6300D66574 /* Build configuration list for PBXNativeTarget "ThreeWordsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE6F6962C6B9E6300D66574 /* Debug */,
+				0AE6F6972C6B9E6300D66574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0AE6F6632C6B9E6000D66574 /* Project object */;
+}
