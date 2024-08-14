@@ -14,8 +14,8 @@ struct ContentView: View {
                     "Enter three-word address",
                     text: $viewModel.threeWordAddress
                 )
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
 
                 // Button to perform the lookup
                 Button(action: {

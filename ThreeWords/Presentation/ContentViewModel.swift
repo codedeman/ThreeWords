@@ -13,12 +13,18 @@ final class ContentViewModel: ObservableObject {
 
     init(apiKey: String) {
         self.w3wAPI = What3WordsV4(apiKey: apiKey)
+        
     }
     @MainActor
     func lookupAddress(context: ModelContext) {
         guard !threeWordAddress.isEmpty else { return }
 
         // Call the What3Words API to convert the address to coordinates and find the opposite point
+        w3wAPI.convertToCoordinates(words: threeWordAddress) { square, error in
+            print("con me no",error?.description)
+            print("Coordinates ===>: \(String(describing: square?.coordinates?.latitude)), \(square?.coordinates?.longitude)")
+
+        }
 
         let converter = Simple3WordsConverter()
         if let coordinates = converter.convertToCoordinates(words: threeWordAddress) {
@@ -71,6 +77,7 @@ final class ContentViewModel: ObservableObject {
     }
 
     func fetchHistory(context: ModelContext) {
+//        let predicate = #Predicate<HistoryItem>
         let fetchDescriptor = FetchDescriptor<HistoryItem>(
             sortBy: [SortDescriptor(\HistoryItem.timestamp, order: .reverse)]
         )

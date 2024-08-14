@@ -10,7 +10,7 @@ import SwiftData
 @Model
 class HistoryItem {
     var address: String?
-    var id: UUID?
+    @Attribute(.unique) var id: UUID?
     var timestamp: Date?
     init(address: String? = nil, id: UUID? = nil, timestamp: Date? = nil) {
         self.address = address
