@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ThreeWordsApp: App {
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(
+                viewModel: ContentViewModel(apiKey: "5IN0VSD1")
+            ).modelContainer(for: [HistoryItem.self])
+
         }
     }
 }

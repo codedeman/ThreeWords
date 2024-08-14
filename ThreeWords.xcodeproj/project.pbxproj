@@ -15,7 +15,11 @@
 		0AE6F68A2C6B9E6300D66574 /* ThreeWordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6892C6B9E6300D66574 /* ThreeWordsUITests.swift */; };
 		0AE6F68C2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F68B2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift */; };
 		0AE6F6992C6B9FA500D66574 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */; };
-		0AE6F69C2C6B9FDF00D66574 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F69B2C6B9FDF00D66574 /* HistoryItem.swift */; };
+		0AE6F69F2C6C465200D66574 /* W3WSwiftApi in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE6F69E2C6C465200D66574 /* W3WSwiftApi */; };
+		0AE6F6A12C6C465200D66574 /* W3WSwiftVoiceApi in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE6F6A02C6C465200D66574 /* W3WSwiftVoiceApi */; };
+		0AE6F6E92C6C8A9B00D66574 /* Simple3WordsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6E82C6C8A9B00D66574 /* Simple3WordsConverter.swift */; };
+		0AE6F6EF2C6C99F800D66574 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6EE2C6C99F800D66574 /* HistoryItem.swift */; };
+		0AE6F6F22C6CA5E200D66574 /* ThreeWordAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6F12C6CA5E200D66574 /* ThreeWordAddressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +51,10 @@
 		0AE6F6892C6B9E6300D66574 /* ThreeWordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsUITests.swift; sourceTree = "<group>"; };
 		0AE6F68B2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		0AE6F69B2C6B9FDF00D66574 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
+		0AE6F6E82C6C8A9B00D66574 /* Simple3WordsConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple3WordsConverter.swift; sourceTree = "<group>"; };
+		0AE6F6EA2C6C8C7500D66574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0AE6F6EE2C6C99F800D66574 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
+		0AE6F6F12C6CA5E200D66574 /* ThreeWordAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordAddressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE6F6A12C6C465200D66574 /* W3WSwiftVoiceApi in Frameworks */,
+				0AE6F69F2C6C465200D66574 /* W3WSwiftApi in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,11 +108,12 @@
 			isa = PBXGroup;
 			children = (
 				0AE6F69A2C6B9FD200D66574 /* Entity */,
+				0AE6F6F02C6CA5C800D66574 /* Presentation */,
+				0AE6F6EA2C6C8C7500D66574 /* Info.plist */,
 				0AE6F66E2C6B9E6000D66574 /* ThreeWordsApp.swift */,
-				0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */,
-				0AE6F6702C6B9E6000D66574 /* ContentView.swift */,
 				0AE6F6722C6B9E6200D66574 /* Assets.xcassets */,
 				0AE6F6742C6B9E6200D66574 /* Preview Content */,
+				0AE6F6E82C6C8A9B00D66574 /* Simple3WordsConverter.swift */,
 			);
 			path = ThreeWords;
 			sourceTree = "<group>";
@@ -136,9 +146,19 @@
 		0AE6F69A2C6B9FD200D66574 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				0AE6F69B2C6B9FDF00D66574 /* HistoryItem.swift */,
+				0AE6F6EE2C6C99F800D66574 /* HistoryItem.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		0AE6F6F02C6CA5C800D66574 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */,
+				0AE6F6702C6B9E6000D66574 /* ContentView.swift */,
+				0AE6F6F12C6CA5E200D66574 /* ThreeWordAddressView.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +177,10 @@
 			dependencies = (
 			);
 			name = ThreeWords;
+			packageProductDependencies = (
+				0AE6F69E2C6C465200D66574 /* W3WSwiftApi */,
+				0AE6F6A02C6C465200D66574 /* W3WSwiftVoiceApi */,
+			);
 			productName = ThreeWords;
 			productReference = 0AE6F66B2C6B9E6000D66574 /* ThreeWords.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +253,9 @@
 				Base,
 			);
 			mainGroup = 0AE6F6622C6B9E6000D66574;
+			packageReferences = (
+				0AE6F69D2C6C465200D66574 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */,
+			);
 			productRefGroup = 0AE6F66C2C6B9E6000D66574 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -272,9 +299,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AE6F6712C6B9E6000D66574 /* ContentView.swift in Sources */,
-				0AE6F69C2C6B9FDF00D66574 /* HistoryItem.swift in Sources */,
+				0AE6F6E92C6C8A9B00D66574 /* Simple3WordsConverter.swift in Sources */,
+				0AE6F6F22C6CA5E200D66574 /* ThreeWordAddressView.swift in Sources */,
 				0AE6F66F2C6B9E6000D66574 /* ThreeWordsApp.swift in Sources */,
 				0AE6F6992C6B9FA500D66574 /* ContentViewModel.swift in Sources */,
+				0AE6F6EF2C6C99F800D66574 /* HistoryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +470,7 @@
 				DEVELOPMENT_TEAM = PBBT599Q77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ThreeWords/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -470,6 +500,7 @@
 				DEVELOPMENT_TEAM = PBBT599Q77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ThreeWords/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -604,6 +635,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0AE6F69D2C6C465200D66574 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/what3words/w3w-swift-wrapper.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0AE6F69E2C6C465200D66574 /* W3WSwiftApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AE6F69D2C6C465200D66574 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */;
+			productName = W3WSwiftApi;
+		};
+		0AE6F6A02C6C465200D66574 /* W3WSwiftVoiceApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AE6F69D2C6C465200D66574 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */;
+			productName = W3WSwiftVoiceApi;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0AE6F6632C6B9E6000D66574 /* Project object */;
 }
