@@ -17,22 +17,12 @@ struct ContentView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
-                // Button to perform the lookup
-                Button(action: {
-                    viewModel.lookupAddress(context: context)
-                }) {
-                    Text("Find Opposite Address")
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                }
-
                 // Display the result address
                 if !viewModel.resultAddress.isEmpty {
-                    Text(viewModel.resultAddress)
-                        .font(.title)
-                        .padding()
+                    HStack {
+                        ThreeWordAddressView(address: viewModel.resultAddress).padding(.leading)
+                        Spacer()
+                    }
                 }
 
                 // Display the history list
@@ -43,7 +33,9 @@ struct ContentView: View {
             .navigationTitle("Three Word Address")
             .onAppear(perform: {
                 viewModel.fetchHistory(context: context)
-            })
+            }).onChange(of: viewModel.threeWordAddress) { oldValue, newValue in
+                viewModel.lookupAddressIfNeeded(context: context)
+            }
         }
     }
 }

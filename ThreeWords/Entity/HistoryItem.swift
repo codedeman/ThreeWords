@@ -12,7 +12,12 @@ class HistoryItem {
     var address: String?
     @Attribute(.unique) var id: UUID?
     var timestamp: Date?
-    init(address: String? = nil, id: UUID? = nil, timestamp: Date? = nil) {
+
+    init(
+        address: String? = nil,
+        id: UUID? = nil,
+        timestamp: Date? = nil
+    ) {
         self.address = address
         self.id = id
         self.timestamp = timestamp
