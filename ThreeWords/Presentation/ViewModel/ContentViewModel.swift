@@ -110,19 +110,13 @@ final class ContentViewModel: ObservableObject {
 
     //MARK: Fetch Languages Available
     func fetchLanguagesAvailable() {
-
         w3wAPI.availableLanguages { [weak self] languages, error in
-            if error != nil {
+            if let error = error {
                 self?.showAlert = true
-                self?.errorMessage = "Unable load Language"
+                self?.errorMessage = "Unable to load Language: \(error.localizedDescription)"
+                return
             }
             if let languages = languages {
-
-                if let error = error {
-                    self?.showAlert = true
-                    self?.errorMessage = "Unable to load Language: \(error.localizedDescription)"
-                    return
-                }
 
                 if let languages = languages as? [W3WBaseLanguage] {
                     DispatchQueue.main.async {

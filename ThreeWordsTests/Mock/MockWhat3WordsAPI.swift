@@ -10,10 +10,7 @@ import W3WSwiftApi
 import CoreLocation
 
 class MockWhat3WordsAPI: What3WordsAPIProtocol {
-    func availableLanguages(completion: @escaping W3WSwiftCore.W3WLanguagesResponse) {
-        
-    }
-    
+    var languagesResponse: ([W3WLanguage]?, W3WError?) = (nil, nil)
     var convertToCoordinatesResult: (W3WSquare?, W3WError?)?
     var convertTo3waResult: (W3WSquare?, W3WError?)?
 
@@ -28,4 +25,9 @@ class MockWhat3WordsAPI: What3WordsAPIProtocol {
             completion(result.0, result.1)
         }
     }
+
+    func availableLanguages(completion: @escaping W3WSwiftCore.W3WLanguagesResponse) {
+        completion(languagesResponse.0, languagesResponse.1)
+    }
+
 }
