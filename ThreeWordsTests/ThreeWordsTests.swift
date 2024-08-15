@@ -39,7 +39,6 @@ final class ThreeWordsTests: XCTestCase {
     }
 
     func testLookupAddressSuccess() {
-           // Arrange
         let mockAPI = MockWhat3WordsAPI()
 
         let mockSquare = MockW3WSquare(
@@ -106,9 +105,23 @@ final class ThreeWordsTests: XCTestCase {
     }
 
     func testPerformanceExample() throws {
-        // This is an example of a performance test case.
+        let mockAPI = MockWhat3WordsAPI()
+
+        let mockSquare = MockW3WSquare(
+            words: "opposite.words.here",
+            coordinates: CLLocationCoordinate2D(
+                latitude: 51.520847,
+                longitude: -0.195521
+            )
+        )
+        mockAPI.convertToCoordinatesResult = (mockSquare, nil)
+        mockAPI.convertTo3waResult = (mockSquare, nil)
+
+        let viewModel = ContentViewModel(w3wAPI: mockAPI)
+
+        viewModel.threeWordAddress = "filled.count.soap"
         self.measure {
-            // Put the code you want to measure the time of here.
+            viewModel.lookupAddress(context: mockContext)
         }
     }
 

@@ -98,36 +98,22 @@
             endingLineNumber = "48"
             landmarkName = "lookupAddress(context:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BF200E60-4CB5-41DF-B0CC-85D56781B12A - 1204dbf69150b8f6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ThreeWords.ContentViewModel.lookupAddress(context: ThreeWords.ModelContextProtocol) -&gt; ()"
-                  moduleName = "ThreeWords"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kevin/ThreeWords/ThreeWords/Presentation/ContentViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49">
-               </Location>
-               <Location
-                  uuid = "BF200E60-4CB5-41DF-B0CC-85D56781B12A - a7c0504212941d6a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;W3WSwiftCore.W3WSquare&gt;, Swift.Optional&lt;W3WSwiftCore.W3WError&gt;) -&gt; () in ThreeWords.ContentViewModel.lookupAddress(context: ThreeWords.ModelContextProtocol) -&gt; ()"
-                  moduleName = "ThreeWords"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kevin/ThreeWords/ThreeWords/Presentation/ContentViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BBA75B4-0BBA-493F-A668-1099F1FC1282"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThreeWords/Presentation/Views/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

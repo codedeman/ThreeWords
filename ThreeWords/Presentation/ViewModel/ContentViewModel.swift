@@ -11,6 +11,7 @@ final class ContentViewModel: ObservableObject {
     @Published var historyItems: [HistoryItem] = []
     @Published var showAlert: Bool = false // Property to trigger alert
     @Published var errorMessage: String?
+    @Published var selectedLanguage: String = "en" // Default to English
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -21,16 +22,11 @@ final class ContentViewModel: ObservableObject {
         self.w3wAPI = w3wAPI
         // Debounce the threeWordAddress input
         $threeWordAddress
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .debounce(for: .milliseconds(500), scheduler: DispatchSerialQueue.main)
             .sink { [weak self] value in
                 self?.debouncedAddress = value
             }
             .store(in: &cancellables)
-    }
-
-    func lookupAddressIfNeeded(context: ModelContextProtocol) {
-        guard !debouncedAddress.isEmpty else { return }
-        lookupAddress(context: context)
     }
 
     func lookupAddress(context: ModelContextProtocol) {
@@ -46,17 +42,18 @@ final class ContentViewModel: ObservableObject {
 
             // Calculate the opposite coordinates
             let oppositeCoordinates = CLLocationCoordinate2D(
-                latitude: latitude,
-                longitude: longitude
+                latitude: -latitude,
+                longitude: longitude > 0 ? longitude - 180 : longitude + 180
             )
 
             // Convert the opposite coordinates back to a three-word address
-            self.w3wAPI.convertTo3wa(coordinates: oppositeCoordinates,language: W3WApiLanguage(locale: "en")) { [weak self] words, error in
+            self.w3wAPI.convertTo3wa(coordinates: oppositeCoordinates, language: W3WApiLanguage(locale: self.selectedLanguage)) { [weak self] words, error in
                 guard let self = self, let words = words else {
                     return
                 }
 
                 if let words = words.words,!words.isEmpty  {
+                    print("thread" , Thread.isMainThread)
                     DispatchQueue.main.async {
                         self.resultAddress = words
                         self.addHistoryItem(address: words, context: context)
