@@ -11,7 +11,8 @@ final class ContentViewModel: ObservableObject {
     @Published var historyItems: [HistoryItem] = []
     @Published var showAlert: Bool = false // Property to trigger alert
     @Published var errorMessage: String?
-    @Published var selectedLanguage: String = "en" // Default to English
+    @Published var selectedLanguage: W3WBaseLanguage?
+    @Published var languages: [W3WBaseLanguage] = []
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -20,9 +21,13 @@ final class ContentViewModel: ObservableObject {
 
     init(w3wAPI: What3WordsAPIProtocol) {
         self.w3wAPI = w3wAPI
+        fetchLanguagesAvailable()
         // Debounce the threeWordAddress input
         $threeWordAddress
-            .debounce(for: .milliseconds(500), scheduler: DispatchSerialQueue.main)
+            .debounce(
+                for: .milliseconds(500),
+                scheduler: DispatchSerialQueue.main
+            )
             .sink { [weak self] value in
                 self?.debouncedAddress = value
             }
@@ -34,9 +39,12 @@ final class ContentViewModel: ObservableObject {
         showAlert = false
 
         // Call the What3Words API to convert the address to coordinates and find the opposite point
-        w3wAPI.convertToCoordinates(words: threeWordAddress) { [weak self] square, error in
-
-            guard let self = self, let latitude = square?.coordinates?.latitude,let longitude = square?.coordinates?.longitude  else {
+        w3wAPI.convertToCoordinates(words: threeWordAddress) {
+            [weak self] square,
+            error in
+            guard let self = self,
+                  let latitude = square?.coordinates?.latitude,
+                  let longitude = square?.coordinates?.longitude else {
                 return
             }
 
@@ -47,7 +55,10 @@ final class ContentViewModel: ObservableObject {
             )
 
             // Convert the opposite coordinates back to a three-word address
-            self.w3wAPI.convertTo3wa(coordinates: oppositeCoordinates, language: W3WApiLanguage(locale: self.selectedLanguage)) { [weak self] words, error in
+            self.w3wAPI.convertTo3wa(
+                coordinates: oppositeCoordinates,
+                language: W3WApiLanguage(locale: self.selectedLanguage?.code ?? "")
+            ) { [weak self] words, error in
                 guard let self = self, let words = words else {
                     return
                 }
@@ -66,7 +77,7 @@ final class ContentViewModel: ObservableObject {
             }
         }
     }
-
+    //MARK: Add History when perform search 
     private func addHistoryItem(
         address: String,
         context: ModelContextProtocol
@@ -94,6 +105,31 @@ final class ContentViewModel: ObservableObject {
             historyItems = try context.fetch(fetchDescriptor)
         } catch {
             print("Failed to fetch history items: \(error.localizedDescription)")
+        }
+    }
+
+    //MARK: Fetch Languages Available
+    func fetchLanguagesAvailable() {
+
+        w3wAPI.availableLanguages { [weak self] languages, error in
+            if error != nil {
+                self?.showAlert = true
+                self?.errorMessage = "Unable load Language"
+            }
+            if let languages = languages {
+
+                if let error = error {
+                    self?.showAlert = true
+                    self?.errorMessage = "Unable to load Language: \(error.localizedDescription)"
+                    return
+                }
+
+                if let languages = languages as? [W3WBaseLanguage] {
+                    DispatchQueue.main.async {
+                        self?.languages = languages
+                    }
+                }
+            }
         }
     }
 

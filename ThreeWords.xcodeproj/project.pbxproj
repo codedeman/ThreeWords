@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A4B2B7F2C6DF6090023F632 /* LanguageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4B2B7E2C6DF6090023F632 /* LanguageSelectionView.swift */; };
 		0AD847AD2C6DA16900369E2E /* MockWhat3WordsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD847AB2C6DA15400369E2E /* MockWhat3WordsAPI.swift */; };
 		0AD847B02C6DA39D00369E2E /* MockSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD847AE2C6DA38800369E2E /* MockSquare.swift */; };
 		0AD847B52C6DB0D000369E2E /* What3WordsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD847B42C6DB0D000369E2E /* What3WordsAPIProtocol.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A4B2B7E2C6DF6090023F632 /* LanguageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionView.swift; sourceTree = "<group>"; };
 		0AD847AB2C6DA15400369E2E /* MockWhat3WordsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWhat3WordsAPI.swift; sourceTree = "<group>"; };
 		0AD847AE2C6DA38800369E2E /* MockSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSquare.swift; sourceTree = "<group>"; };
 		0AD847B42C6DB0D000369E2E /* What3WordsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = What3WordsAPIProtocol.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				0AE6F6702C6B9E6000D66574 /* ContentView.swift */,
 				0AE6F6F12C6CA5E200D66574 /* ThreeWordAddressView.swift */,
+				0A4B2B7E2C6DF6090023F632 /* LanguageSelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				0AD847B52C6DB0D000369E2E /* What3WordsAPIProtocol.swift in Sources */,
 				0AD847AD2C6DA16900369E2E /* MockWhat3WordsAPI.swift in Sources */,
 				0AE6F6F62C6CC80700D66574 /* MockModelContext.swift in Sources */,
+				0A4B2B7F2C6DF6090023F632 /* LanguageSelectionView.swift in Sources */,
 				0AE6F6F82C6CFC8A00D66574 /* ContextProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

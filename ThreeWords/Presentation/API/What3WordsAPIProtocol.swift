@@ -13,6 +13,7 @@ protocol What3WordsAPIProtocol {
     func convertToCoordinates(words: String, completion: @escaping W3WSquareResponse)
 
     func convertTo3wa(coordinates: CLLocationCoordinate2D, language: W3WLanguage, completion: @escaping W3WSquareResponse)
+    func availableLanguages(completion: @escaping W3WLanguagesResponse)
 }
 
 extension What3WordsV4: What3WordsAPIProtocol {}

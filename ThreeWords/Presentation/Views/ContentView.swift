@@ -12,29 +12,29 @@ struct ContentView: View {
     //MARK: Property
     @Environment(\.modelContext) private var context
     @StateObject var viewModel: ContentViewModel
-    @State private var selectedLanguage = "en"
-    let languages = ["en": "English", "fr": "French", "es": "Spanish", "de": "German"]
+    @State private var showingLanguageList = false
 
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Select Language", selection: $selectedLanguage) {
-                    ForEach(languages.keys.sorted(), id: \.self) { key in
-                        Text(languages[key]!).tag(key)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                .onChange(of: selectedLanguage) { oldValue, newValue in
-                    viewModel.selectedLanguage = newValue
-                }
                 // TextField for entering a three-word address
-                TextField(
-                    "Enter three-word address",
-                    text: $viewModel.threeWordAddress
-                )
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+                HStack {
+                    TextField(
+                        "Enter three-word address",
+                        text: $viewModel.threeWordAddress
+                    )
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    Button(viewModel.selectedLanguage?.nativeName ?? "English") {
+                        showingLanguageList.toggle()
+                    }
+                    .sheet(isPresented: $showingLanguageList) {
+                        LanguageSelectionView(viewModel: viewModel)
+                    }
+                    .padding()
+
+                }
+
 
                 // Display the result address
                 if !viewModel.resultAddress.isEmpty {
