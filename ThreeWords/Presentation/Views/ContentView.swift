@@ -20,7 +20,7 @@ struct ContentView: View {
                 // Display the result address
                 if !viewModel.resultAddress.isEmpty {
                     HStack {
-                        ThreeWordAddressView(address: viewModel.resultAddress).padding(.leading)
+                        ThreeWordAddressView(address: viewModel.resultAddress).padding()
                         Spacer()
                     }
                 }
@@ -35,7 +35,14 @@ struct ContentView: View {
                 viewModel.fetchHistory(context: context)
             }).onChange(of: viewModel.threeWordAddress) { oldValue, newValue in
                 viewModel.lookupAddressIfNeeded(context: context)
-            }
+            }.alert(isPresented: $viewModel.showAlert, content: {
+                Alert(
+                    title: Text("Error"),
+                    message: Text(viewModel.errorMessage ?? "Unknown error occurred."),
+                    dismissButton: .default(Text("OK"))
+                )
+
+            })
         }
     }
 }

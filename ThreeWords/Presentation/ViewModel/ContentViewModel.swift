@@ -4,18 +4,21 @@ import W3WSwiftApi
 import CoreLocation
 import Combine
 
-@MainActor
 final class ContentViewModel: ObservableObject {
     //MARK: Property 
     @Published var threeWordAddress: String = ""
     @Published var resultAddress: String = ""
     @Published var historyItems: [HistoryItem] = []
-    private let w3wAPI: What3WordsV4
+    @Published var showAlert: Bool = false // Property to trigger alert
+    @Published var errorMessage: String?
+
     private var cancellables: Set<AnyCancellable> = []
+
+    private let w3wAPI: What3WordsAPIProtocol
     private var debouncedAddress: String = ""
 
-    init(apiKey: String) {
-       w3wAPI = What3WordsV4(apiKey: apiKey)
+    init(w3wAPI: What3WordsAPIProtocol) {
+        self.w3wAPI = w3wAPI
         // Debounce the threeWordAddress input
         $threeWordAddress
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
@@ -25,53 +28,51 @@ final class ContentViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func lookupAddressIfNeeded(context: ModelContext) {
+    func lookupAddressIfNeeded(context: ModelContextProtocol) {
         guard !debouncedAddress.isEmpty else { return }
         lookupAddress(context: context)
     }
 
-    func lookupAddress(context: ModelContext) {
+    func lookupAddress(context: ModelContextProtocol) {
         guard !threeWordAddress.isEmpty else { return }
+        showAlert = false
 
         // Call the What3Words API to convert the address to coordinates and find the opposite point
-        w3wAPI.convertToCoordinates(words: threeWordAddress) { square, error in
-            print("con me no",error?.description ?? "")
-            print("Coordinates ===>: \(String(describing: square?.coordinates?.latitude)), \(square?.coordinates?.longitude)")
+        w3wAPI.convertToCoordinates(words: threeWordAddress) { [weak self] square, error in
 
-        }
-
-        let converter = Simple3WordsConverter()
-        if let coordinates = converter.convertToCoordinates(words: threeWordAddress) {
-            print("Coordinates: \(coordinates.latitude), \(coordinates.longitude)")
+            guard let self = self, let latitude = square?.coordinates?.latitude,let longitude = square?.coordinates?.longitude  else {
+                return
+            }
 
             // Calculate the opposite coordinates
             let oppositeCoordinates = CLLocationCoordinate2D(
-                latitude: coordinates.latitude,
-                longitude: coordinates.longitude
+                latitude: latitude,
+                longitude: longitude
             )
 
             // Convert the opposite coordinates back to a three-word address
             self.w3wAPI.convertTo3wa(coordinates: oppositeCoordinates,language: W3WApiLanguage(locale: "en")) { [weak self] words, error in
                 guard let self = self, let words = words else {
-                    print("Error converting to 3-word address: \(error?.localizedDescription ?? "Unknown error")")
                     return
                 }
 
-                if let words = words.words  {
+                if let words = words.words,!words.isEmpty  {
                     DispatchQueue.main.async {
                         self.resultAddress = words
                         self.addHistoryItem(address: words, context: context)
                     }
                 } else {
                     print("No words returned from the API.")
+                    showAlert = true
+                    errorMessage = "No words returned from the API"
                 }
             }
         }
     }
 
-    func addHistoryItem(
+    private func addHistoryItem(
         address: String,
-        context: ModelContext
+        context: ModelContextProtocol
     ) {
         let newItem = HistoryItem(
             address: address,
@@ -88,12 +89,10 @@ final class ContentViewModel: ObservableObject {
         }
     }
 
-    func fetchHistory(context: ModelContext) {
-//        let predicate = #Predicate<HistoryItem>
+     func fetchHistory(context: ModelContextProtocol) {
         let fetchDescriptor = FetchDescriptor<HistoryItem>(
             sortBy: [SortDescriptor(\HistoryItem.timestamp, order: .reverse)]
         )
-
         do {
             historyItems = try context.fetch(fetchDescriptor)
         } catch {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD847AD2C6DA16900369E2E /* MockWhat3WordsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD847AB2C6DA15400369E2E /* MockWhat3WordsAPI.swift */; };
+		0AD847B02C6DA39D00369E2E /* MockSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD847AE2C6DA38800369E2E /* MockSquare.swift */; };
+		0AD847B52C6DB0D000369E2E /* What3WordsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD847B42C6DB0D000369E2E /* What3WordsAPIProtocol.swift */; };
 		0AE6F66F2C6B9E6000D66574 /* ThreeWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F66E2C6B9E6000D66574 /* ThreeWordsApp.swift */; };
 		0AE6F6712C6B9E6000D66574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6702C6B9E6000D66574 /* ContentView.swift */; };
 		0AE6F6732C6B9E6200D66574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE6F6722C6B9E6200D66574 /* Assets.xcassets */; };
@@ -17,9 +20,10 @@
 		0AE6F6992C6B9FA500D66574 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */; };
 		0AE6F69F2C6C465200D66574 /* W3WSwiftApi in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE6F69E2C6C465200D66574 /* W3WSwiftApi */; };
 		0AE6F6A12C6C465200D66574 /* W3WSwiftVoiceApi in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE6F6A02C6C465200D66574 /* W3WSwiftVoiceApi */; };
-		0AE6F6E92C6C8A9B00D66574 /* Simple3WordsConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6E82C6C8A9B00D66574 /* Simple3WordsConverter.swift */; };
 		0AE6F6EF2C6C99F800D66574 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6EE2C6C99F800D66574 /* HistoryItem.swift */; };
 		0AE6F6F22C6CA5E200D66574 /* ThreeWordAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6F12C6CA5E200D66574 /* ThreeWordAddressView.swift */; };
+		0AE6F6F62C6CC80700D66574 /* MockModelContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6F42C6CC7EC00D66574 /* MockModelContext.swift */; };
+		0AE6F6F82C6CFC8A00D66574 /* ContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6F6F72C6CFC8A00D66574 /* ContextProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AD847AB2C6DA15400369E2E /* MockWhat3WordsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWhat3WordsAPI.swift; sourceTree = "<group>"; };
+		0AD847AE2C6DA38800369E2E /* MockSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSquare.swift; sourceTree = "<group>"; };
+		0AD847B42C6DB0D000369E2E /* What3WordsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = What3WordsAPIProtocol.swift; sourceTree = "<group>"; };
 		0AE6F66B2C6B9E6000D66574 /* ThreeWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE6F66E2C6B9E6000D66574 /* ThreeWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsApp.swift; sourceTree = "<group>"; };
 		0AE6F6702C6B9E6000D66574 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,10 +58,11 @@
 		0AE6F6892C6B9E6300D66574 /* ThreeWordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsUITests.swift; sourceTree = "<group>"; };
 		0AE6F68B2C6B9E6300D66574 /* ThreeWordsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		0AE6F6E82C6C8A9B00D66574 /* Simple3WordsConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple3WordsConverter.swift; sourceTree = "<group>"; };
 		0AE6F6EA2C6C8C7500D66574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0AE6F6EE2C6C99F800D66574 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
 		0AE6F6F12C6CA5E200D66574 /* ThreeWordAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWordAddressView.swift; sourceTree = "<group>"; };
+		0AE6F6F42C6CC7EC00D66574 /* MockModelContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModelContext.swift; sourceTree = "<group>"; };
+		0AE6F6F72C6CFC8A00D66574 /* ContextProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AD847B12C6DAF6F00369E2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F6702C6B9E6000D66574 /* ContentView.swift */,
+				0AE6F6F12C6CA5E200D66574 /* ThreeWordAddressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AD847B22C6DAF8300369E2E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0AD847B32C6DB0BC00369E2E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F6F72C6CFC8A00D66574 /* ContextProtocol.swift */,
+				0AD847B42C6DB0D000369E2E /* What3WordsAPIProtocol.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		0AE6F6622C6B9E6000D66574 = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +147,6 @@
 				0AE6F66E2C6B9E6000D66574 /* ThreeWordsApp.swift */,
 				0AE6F6722C6B9E6200D66574 /* Assets.xcassets */,
 				0AE6F6742C6B9E6200D66574 /* Preview Content */,
-				0AE6F6E82C6C8A9B00D66574 /* Simple3WordsConverter.swift */,
 			);
 			path = ThreeWords;
 			sourceTree = "<group>";
@@ -129,6 +162,7 @@
 		0AE6F67E2C6B9E6300D66574 /* ThreeWordsTests */ = {
 			isa = PBXGroup;
 			children = (
+				0AE6F6F32C6CC7DA00D66574 /* Mock */,
 				0AE6F67F2C6B9E6300D66574 /* ThreeWordsTests.swift */,
 			);
 			path = ThreeWordsTests;
@@ -154,11 +188,21 @@
 		0AE6F6F02C6CA5C800D66574 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				0AE6F6982C6B9FA500D66574 /* ContentViewModel.swift */,
-				0AE6F6702C6B9E6000D66574 /* ContentView.swift */,
-				0AE6F6F12C6CA5E200D66574 /* ThreeWordAddressView.swift */,
+				0AD847B32C6DB0BC00369E2E /* API */,
+				0AD847B22C6DAF8300369E2E /* ViewModel */,
+				0AD847B12C6DAF6F00369E2E /* Views */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0AE6F6F32C6CC7DA00D66574 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6F6F42C6CC7EC00D66574 /* MockModelContext.swift */,
+				0AD847AB2C6DA15400369E2E /* MockWhat3WordsAPI.swift */,
+				0AD847AE2C6DA38800369E2E /* MockSquare.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,11 +343,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AE6F6712C6B9E6000D66574 /* ContentView.swift in Sources */,
-				0AE6F6E92C6C8A9B00D66574 /* Simple3WordsConverter.swift in Sources */,
+				0AD847B02C6DA39D00369E2E /* MockSquare.swift in Sources */,
 				0AE6F6F22C6CA5E200D66574 /* ThreeWordAddressView.swift in Sources */,
 				0AE6F66F2C6B9E6000D66574 /* ThreeWordsApp.swift in Sources */,
 				0AE6F6992C6B9FA500D66574 /* ContentViewModel.swift in Sources */,
 				0AE6F6EF2C6C99F800D66574 /* HistoryItem.swift in Sources */,
+				0AD847B52C6DB0D000369E2E /* What3WordsAPIProtocol.swift in Sources */,
+				0AD847AD2C6DA16900369E2E /* MockWhat3WordsAPI.swift in Sources */,
+				0AE6F6F62C6CC80700D66574 /* MockModelContext.swift in Sources */,
+				0AE6F6F82C6CFC8A00D66574 /* ContextProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

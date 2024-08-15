@@ -7,13 +7,14 @@
 
 import SwiftUI
 import SwiftData
+import W3WSwiftApi
 @main
 struct ThreeWordsApp: App {
 
     var body: some Scene {
         WindowGroup {
             ContentView(
-                viewModel: ContentViewModel(apiKey: "CTF89056")
+                viewModel: ContentViewModel(w3wAPI: What3WordsV4(apiKey:"CTF89056"))
             ).modelContainer(
                 for: [HistoryItem.self]
             )
