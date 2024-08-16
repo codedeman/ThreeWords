@@ -75,7 +75,8 @@ final class ContentViewModel: ObservableObject {
             }
         }
     }
-    //MARK: Add History when perform search 
+
+    //MARK: Add History when perform search
     private func addHistoryItem(
         address: String,
         context: ModelContextProtocol
@@ -91,7 +92,8 @@ final class ContentViewModel: ObservableObject {
             try context.save()
             fetchHistory(context: context)
         } catch {
-            print("Failed to save history item: \(error.localizedDescription)")
+            showAlert = true
+            errorMessage = "Failed to save history item: \(error.localizedDescription)"
         }
     }
 
@@ -102,7 +104,8 @@ final class ContentViewModel: ObservableObject {
         do {
             historyItems = try context.fetch(fetchDescriptor)
         } catch {
-            print("Failed to fetch history items: \(error.localizedDescription)")
+            showAlert = true
+            errorMessage = "Failed to fetch history items: \(error.localizedDescription)"
         }
     }
 
@@ -110,9 +113,11 @@ final class ContentViewModel: ObservableObject {
     func fetchLanguagesAvailable() {
         w3wAPI.availableLanguages { [weak self] languages, error in
             if let error = error {
-                self?.showAlert = true
-                self?.errorMessage = "Unable to load Language: \(error.localizedDescription)"
-                return
+                DispatchQueue.main.async {
+                    self?.showAlert = true
+                    self?.errorMessage = "Unable to load Language: \(error.localizedDescription)"
+                    return
+                }
             }
             if let languages = languages {
 
