@@ -23,10 +23,12 @@ struct ThreeWordsApp: App {
                     Label("Search", systemImage: "magnifyingglass")
                 }
 
-                HistoryView(viewModel: ContentViewModel(w3wAPI: w3WAPI))
-                    .tabItem {
-                        Label("History", systemImage: "clock")
-                    }.modelContainer(for: [HistoryItem.self])
+                HistoryView(
+                    viewModel: ContentViewModel(w3wAPI: w3WAPI)
+                )
+                .tabItem {
+                    Label("History", systemImage: "clock")
+                }.modelContainer(for: [HistoryItem.self])
             }
 
         }

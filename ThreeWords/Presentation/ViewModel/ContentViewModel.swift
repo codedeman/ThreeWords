@@ -21,7 +21,6 @@ final class ContentViewModel: ObservableObject {
 
     init(w3wAPI: What3WordsAPIProtocol) {
         self.w3wAPI = w3wAPI
-        fetchLanguagesAvailable()
         // Debounce the threeWordAddress input
         $threeWordAddress
             .debounce(
@@ -61,6 +60,7 @@ final class ContentViewModel: ObservableObject {
                 guard let self = self, let words = words else {
                     return
                 }
+                print("Words returned from API: \(words.words ?? "nil")")
 
                 if let words = words.words,!words.isEmpty  {
                     DispatchQueue.main.async {
@@ -74,6 +74,17 @@ final class ContentViewModel: ObservableObject {
                 }
             }
         }
+    }
+
+    private func calculateOppositeCoordinates(
+        latitude: CLLocationDegrees,
+        longitude: CLLocationDegrees
+    ) -> CLLocationCoordinate2D {
+
+        return CLLocationCoordinate2D(
+            latitude: -latitude,
+            longitude: longitude > 0 ? longitude - 180 : longitude + 180
+        )
     }
 
     //MARK: Add History when perform search
@@ -112,22 +123,29 @@ final class ContentViewModel: ObservableObject {
     //MARK: Fetch Languages Available
     func fetchLanguagesAvailable() {
         w3wAPI.availableLanguages { [weak self] languages, error in
+            guard let self = self else { return }
+
             if let error = error {
                 DispatchQueue.main.async {
-                    self?.showAlert = true
-                    self?.errorMessage = "Unable to load Language: \(error.localizedDescription)"
-                    return
+                    self.showAlert = true
+                    self.errorMessage = "Unable to load Language: \(error.localizedDescription)"
                 }
+                return
             }
-            if let languages = languages {
 
-                if let languages = languages as? [W3WBaseLanguage] {
-                    DispatchQueue.main.async {
-                        self?.languages = languages
-                    }
+            guard let languages = languages as? [W3WBaseLanguage] else {
+                DispatchQueue.main.async {
+                    self.showAlert = true
+                    self.errorMessage = "Invalid language data received."
                 }
+                return
+            }
+
+            DispatchQueue.main.async {
+                self.languages = languages
             }
         }
     }
+
 
 }

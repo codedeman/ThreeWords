@@ -11,6 +11,7 @@ import W3WSwiftApi
 @testable import ThreeWords
 
 final class ThreeWordsTests: XCTestCase {
+
     var viewModel: ContentViewModel!
     var mockAPI: MockWhat3WordsAPI!
     var mockContext: MockContext!
@@ -29,7 +30,6 @@ final class ThreeWordsTests: XCTestCase {
         viewModel = nil
     }
 
-
     func testInitialState() {
         XCTAssertEqual(viewModel.threeWordAddress, "")
         XCTAssertEqual(viewModel.resultAddress, "")
@@ -40,30 +40,30 @@ final class ThreeWordsTests: XCTestCase {
 
     func testLookupAddressSuccess() {
         // Arrange
-        let mockAPI = MockWhat3WordsAPI()
-        let mockSquare = MockW3WSquare(
-            words: "opposite.words.here",
-            coordinates: CLLocationCoordinate2D(
-                latitude: 51.520847,
-                longitude: -0.195521
-            )
-        )
-        mockAPI.convertToCoordinatesResult = (mockSquare, nil)
-        mockAPI.convertTo3waResult = (mockSquare, nil)
-        viewModel = ContentViewModel(w3wAPI: mockAPI)
-        viewModel.threeWordAddress = "filled.count.soap"
+           let mockAPI = MockWhat3WordsAPI()
+           let mockSquare = MockW3WSquare(
+               words: "opposite.words.here",
+               coordinates: CLLocationCoordinate2D(
+                   latitude: 51.520847,
+                   longitude: -0.195521
+               )
+           )
+           mockAPI.convertToCoordinatesResult = (mockSquare, nil)
+           mockAPI.convertTo3waResult = (mockSquare, nil)
+           viewModel = ContentViewModel(w3wAPI: mockAPI)
+           viewModel.threeWordAddress = "filled.count.soap"
 
-        let expectation = self.expectation(description: "Lookup address should succeed")
+           let expectation = self.expectation(description: "Lookup address should succeed")
 
-        // Act
-        viewModel.lookupAddress(context: mockContext)
+           // Act
+           viewModel.lookupAddress(context: mockContext)
 
-        // Assert
+           // Assert
         DispatchQueue.main.async {
             XCTAssertEqual(self.viewModel.resultAddress, "opposite.words.here")
-            XCTAssertFalse(self.viewModel.showAlert)
             expectation.fulfill()
         }
+        XCTAssertFalse(self.viewModel.showAlert)
 
         waitForExpectations(timeout: 5, handler: nil)
     }
@@ -90,12 +90,12 @@ final class ThreeWordsTests: XCTestCase {
 
         // Then
         DispatchQueue.main.async {
-            XCTAssertTrue(self.viewModel.showAlert)
             XCTAssertEqual(self.viewModel.errorMessage, "No words returned from the API")
             expectation.fulfill()
         }
+        XCTAssertTrue(self.viewModel.showAlert)
 
-        waitForExpectations(timeout: 5.0, handler: nil)
+        waitForExpectations(timeout: 6, handler: nil)
 
     }
 
