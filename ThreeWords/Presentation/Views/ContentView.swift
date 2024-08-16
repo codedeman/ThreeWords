@@ -25,6 +25,10 @@ struct ContentView: View {
                     )
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                    .onChange(of: viewModel.threeWordAddress) { oldValue, newValue in
+                        viewModel.lookupAddress(context: context)
+                    }
+
                     Button(viewModel.selectedLanguage?.nativeName ?? "English") {
                         showingLanguageList.toggle()
                     }
@@ -46,11 +50,7 @@ struct ContentView: View {
 
             }
             .navigationTitle("Three Word Address")
-            .onAppear(perform: {
-                viewModel.fetchHistory(context: context)
-            }).onChange(of: viewModel.threeWordAddress) { oldValue, newValue in
-                viewModel.lookupAddress(context: context)
-            }.alert(isPresented: $viewModel.showAlert, content: {
+            .alert(isPresented: $viewModel.showAlert, content: {
                 Alert(
                     title: Text("Error"),
                     message: Text(viewModel.errorMessage ?? "Unknown error occurred."),
