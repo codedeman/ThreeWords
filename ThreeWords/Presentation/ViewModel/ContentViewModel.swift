@@ -47,9 +47,9 @@ final class ContentViewModel: ObservableObject {
             }
 
             // Calculate the opposite coordinates
-            let oppositeCoordinates = CLLocationCoordinate2D(
-                latitude: -latitude,
-                longitude: longitude > 0 ? longitude - 180 : longitude + 180
+            let oppositeCoordinates = self.calculateOppositeCoordinates(
+                latitude: latitude,
+                longitude: longitude
             )
 
             // Convert the opposite coordinates back to a three-word address
@@ -60,8 +60,6 @@ final class ContentViewModel: ObservableObject {
                 guard let self = self, let words = words else {
                     return
                 }
-                print("Words returned from API: \(words.words ?? "nil")")
-
                 if let words = words.words,!words.isEmpty  {
                     DispatchQueue.main.async {
                         self.resultAddress = words
@@ -108,7 +106,7 @@ final class ContentViewModel: ObservableObject {
         }
     }
 
-     func fetchHistory(context: ModelContextProtocol) {
+    func fetchHistory(context: ModelContextProtocol) {
         let fetchDescriptor = FetchDescriptor<HistoryItem>(
             sortBy: [SortDescriptor(\HistoryItem.timestamp, order: .reverse)]
         )
@@ -146,6 +144,5 @@ final class ContentViewModel: ObservableObject {
             }
         }
     }
-
 
 }
