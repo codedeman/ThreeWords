@@ -35,7 +35,6 @@ struct ContentView: View {
 
                 }
 
-
                 // Display the result address
                 if !viewModel.resultAddress.isEmpty {
                     HStack {
@@ -43,11 +42,8 @@ struct ContentView: View {
                         Spacer()
                     }
                 }
+                Spacer()
 
-                // Display the history list
-                List(viewModel.historyItems, id: \.id) { item in
-                    ThreeWordAddressView(address: item.address ?? "")
-                }
             }
             .navigationTitle("Three Word Address")
             .onAppear(perform: {
@@ -67,3 +63,6 @@ struct ContentView: View {
 }
 
 
+#Preview {
+    ContentView(viewModel: .init(w3wAPI: MockWhat3WordsAPI()))
+}

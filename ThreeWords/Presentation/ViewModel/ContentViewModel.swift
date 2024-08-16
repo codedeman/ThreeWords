@@ -37,7 +37,6 @@ final class ContentViewModel: ObservableObject {
     func lookupAddress(context: ModelContextProtocol) {
         guard !threeWordAddress.isEmpty else { return }
         showAlert = false
-
         // Call the What3Words API to convert the address to coordinates and find the opposite point
         w3wAPI.convertToCoordinates(words: threeWordAddress) {
             [weak self] square,
@@ -64,7 +63,6 @@ final class ContentViewModel: ObservableObject {
                 }
 
                 if let words = words.words,!words.isEmpty  {
-                    print("thread" , Thread.isMainThread)
                     DispatchQueue.main.async {
                         self.resultAddress = words
                         self.addHistoryItem(address: words, context: context)
