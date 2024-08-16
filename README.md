@@ -14,6 +14,7 @@
 
 - **Tab-Based Navigation:** The app offers a smooth navigation experience with tabs to switch between the search functionality and the history view.
 ## Demo
+![Earth Sandwich App Demo](https://raw.githubusercontent.com/codedeman/ThreeWords/main/Demo/Simulator%20Screen%20Recording%20-%20iPhone%2015%20Pro%20-%202024-08-16%20at%2008.36.37.gif)
 
 
 ## Tech Stack
